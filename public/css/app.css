@@ -12177,11 +12177,6 @@ footer.main-footer h5 span {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-@media (max-width: 992px) {
-    .item > div {
-        height: 85px;
-    }
-}
 .items .item:first-child {
     margin-right: 0;
 }
