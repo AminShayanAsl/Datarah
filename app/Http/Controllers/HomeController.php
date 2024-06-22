@@ -51,4 +51,10 @@ class HomeController extends Controller
         $content = createNarration($this->em);
         return view('help', ['content'=>$content]);
     }
+
+    public function error()
+    {
+        $content = createNarration($this->em);
+        return view('error', ['content'=>$content]);
+    }
 }

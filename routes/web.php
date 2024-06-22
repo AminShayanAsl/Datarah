@@ -44,3 +44,5 @@ Route::get('confirmation-answer/', [AnswerController::class, 'confirmationAnswer
 Route::post('comment-answer/', [AnswerController::class, 'commentAnswer']);
 Route::post('answer-approval/', [AnswerController::class, 'answerApproval']);
 Route::post('answer-disapproval/', [AnswerController::class, 'answerDisapproval']);
+
+Route::any('{catchall}', [HomeController::class, 'error'])->where('catchall', '.*');
