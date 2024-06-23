@@ -67,6 +67,15 @@ $(document).ready(function(){
             this.scrollLeft = $(this).data('scrollLeft') + $(this).data('x') - event.touches[0].pageX;
         }
     });
+    $('.items .item *').bind('touchstart', function (event) {
+        $(this).data('move', false);
+    }).bind('touchmove', function (event) {
+        $(this).data('move', true);
+    }).bind('touchend', function (event) {
+        if ($(this).data('move') === false) {
+            window.open($(this).closest('.item').attr('href'));
+        }
+    });
     $('.grouping-tags a').click(function () {
         var level = $(this).attr('data-level-num');
         var lesson = $(this).attr('data-lesson-name');

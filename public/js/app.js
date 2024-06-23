@@ -2117,6 +2117,15 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
       this.scrollLeft = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).data('scrollLeft') + jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).data('x') - event.touches[0].pageX;
     }
   });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.items .item *').bind('touchstart', function (event) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).data('move', false);
+  }).bind('touchmove', function (event) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).data('move', true);
+  }).bind('touchend', function (event) {
+    if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).data('move') === false) {
+      window.open(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).closest('.item').attr('href'));
+    }
+  });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.grouping-tags a').click(function () {
     var level = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-level-num');
     var lesson = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-lesson-name');
